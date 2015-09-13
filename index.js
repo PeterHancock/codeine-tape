@@ -4,7 +4,6 @@ var fs = require('fs'),
     through = require('through2')
 
 module.exports = function(view) {
-
     var t = through()
     var v = Object.assign({}, view, {
         bundle: view.srcfile ? view.srcfile.replace(/\.js$/, '-bundle.js') : 'bundle.js'
