@@ -5,7 +5,7 @@
   "license": "MIT",
   "author": "Peter Hancock <peter.hancock@gmail.com> (https://peterhancock.github.io)",
   "repository": {
-    "url": "git://github.com/PeterHancock/plugin-materialize.git"
+    "url": "git://github.com/PeterHancock/template-tape.git"
   },
   "main": "index.js",
   "dependencies": {
