@@ -3,8 +3,9 @@ var fs = require('fs'),
     concat = require('concat-stream'),
     through = require('through2')
 
-module.exports = function(view, opts) {
+function render(view, opts) {
     var t = through()
+    opts = opts || {}
     var bundle = view.srcfile ? (opts.resolveTapeScript ? opts.resolveTapeScript(view.srcfile) : view.srcfile.replace(/\.js$/, '-bundle.js')) : null
     var v = Object.assign({}, view, {
         bundle: bundle
@@ -14,4 +15,9 @@ module.exports = function(view, opts) {
         t.end(mustache.render(template.toString(), v))
     }))
     return t
+}
+
+module.exports = {
+    render: render,
+    static: __dirname + '/static'
 }
